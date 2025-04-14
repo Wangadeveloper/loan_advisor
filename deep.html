@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Loan Advisor</title>
+    <style>
+        /* Modern CSS with responsive design */
+        :root {
+            --primary: #4a6fa5;
+            --secondary: #166088;
+            --accent: #4fc3f7;
+            --text: #333;
+            --light: #f8f9fa;
+            --dark: #343a40;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--light);
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        nav {
+            background-color: var(--dark);
+            padding: 1rem 0;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        nav li {
+            margin: 0 1rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        main {
+            padding: 3rem 0;
+        }
+        
+        article {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        h2 {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+        
+        h3 {
+            color: var(--primary);
+            margin: 1.5rem 0 1rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        .highlight {
+            background-color: #f0f7ff;
+            border-left: 4px solid var(--accent);
+            padding: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        code {
+            background: #f4f4f4;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        
+        pre {
+            background: white;
+            color: black;
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+        
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        .cta {
+            background-color: var(--accent);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 1rem 0;
+            font-weight: bold;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav li {
+                margin: 0.5rem 0;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>AI-Powered Financial Advisor</h1>
+            <p class="subtitle">Using Google's Gemini to Tackle Non-Performing Loans</p>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#technology">Technology</a></li>
+            <li><a href="#try-it">Try It yourself</a></li>
+        </ul>
+    </nav>
+    
+    <main class="container">
+        <article id="overview">
+            <h2>Transforming countries' Loan Landscape with AI</h2>
+            <p>Kenya like any other country faces a growing challenge with non-performing loans (NPLs). With economic uncertainty and poor financial planning, borrowers struggle to repay debts while lenders grapple with risk assessment. Our solution bridges this gap using artificial intelligence.</p>
+            
+            <div class="highlight">
+                <p>This project leverages <strong>Google's Gemini 1.5 Flash</strong> to create an intelligent system that analyzes financial documents, assesses credit risk, and delivers personalized loan advice—powered by real-world M-Pesa transaction data.</p>
+            </div>
+            
+            <h3>The Problem</h3>
+            <p>Recent financial report from KCB bank kenya showed an increased NPL which may be as a result of:</p>
+            <ul>
+                <li>Surging default rates due to economic volatility</li>
+                <li>Limited tools for accurate risk assessment</li>
+                <li>Borrowers lacking access to tailored guidance</li>
+            </ul>
+        </article>
+        
+        <article id="how-it-works">
+            <h2>How the System Works</h2>
+            
+            <h3>1. Analyzing National Economic Data</h3>
+            <p>Gemini's 10M+ token context window ingests Kenya's Financial Performance Documents, extracting key insights for tailored advice based on sector of the bussiness:</p>
+            <pre><code># Python code example
+            pdf_file = '/kaggle/input/economic/Facts-Figures-2024.pdf'
+            my_file = genai.upload_file(pdf_file)
+            response = model.generate_content([my_file, "Summarize GDP growth trends"])</code></pre>
+                        
+            <h3>2. Personalized Loan Advice</h3>
+            <p>Few-shot prompting teaches Gemini real-world lending criteria and how to format and give an informative advice:</p>
+            <div class="highlight">
+                <p><strong>Example Output:</strong> "With a monthly income of KES 60,000, we recommend a loan repayment of KES 18,000-24,000 (30-40% of income). For your cattle brokerage business, consider investing in transportation upgrades."</p>
+            </div>
+            
+            <h3>3. Real-Time M-Pesa Integration</h3>
+            <p>Users can query for their transunction history in a natural language way,this is amaizing ,I dont have to download the entire transunction statements and start walking through each entry to find what I want!:</p>
+            <pre><code>resp = chat.send_message("how many transuctions involved moureen on the 
+                Details column of transuction table?")
+                print(f"\n{resp.text}");</code></pre>
+            <p>To make things even more interesting we can have the more technical part of the request already passed and just take the user search terms in a form entry, then pass the form data to the request as shown</p>
+            <pre><code>resp = chat.send_message("how many transuctions involved <strong>{form.data}</strong> on the 
+                Details column of transuction table?")
+                print(f"\n{resp.text}");</code></pre>
+        
+        </article>
+        
+        <article id="technology">
+            <h2>Technology Stack</h2>
+            <table>
+                <tr>
+                    <th>Tool</th>
+                    <th>Purpose</th>
+                </tr>
+                <tr>
+                    <td>Google Gemini 1.5 Flash</td>
+                    <td>Document analysis and financial advice</td>
+                </tr>
+                <tr>
+                    <td>SQLite</td>
+                    <td>Querying transaction data</td>
+                </tr>
+                <tr>
+                    <td>PyPDF2</td>
+                    <td>PDF text extraction</td>
+                </tr>
+                <tr>
+                    <td>Streamlit</td>
+                    <td>Web interface (free hosting)</td>
+                </tr>
+            </table>
+        </article>
+        
+        <article id="try-it">
+            <h2>Try It Yourself</h2>
+            <p>Our free prototype is available on kaggle ,within a short time will have it on streamlit:</p>
+            <a href="https://www.kaggle.com/code/wangapa106g/borrowers-loan-risk-assesment" class="cta">Launch Demo</a>
+            <p>Or explore the code on GitHub:</p>
+            <a href="https://github.com/Wangadeveloper" class="cta">View Repository</a>
+        </article>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>AI Loan Advisor Project </p>
+            <p>Tags: #AI #Fintech #GeminiAI #Kenya #FinancialInclusion</p>
+        </div>
+    </footer>
+</body>
+</html>
